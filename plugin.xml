@@ -103,6 +103,8 @@
 
         <framework src="src/android/cordova-plugin-ibeacon.gradle" custom="true" type="gradleReference" />
         <framework src="com.android.support:support-core-utils:26+" />
+
+        <resource-file src="src/android/cordova-plugin-ibeacon-strings.xml" target="res/values/cordova-plugin-ibeacon-strings.xml" />
     </platform>
 
 </plugin>

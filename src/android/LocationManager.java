@@ -300,8 +300,8 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
             }
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-            builder.setTitle("This app needs location access");
-            builder.setMessage("Please grant location access so this app can detect beacons.");
+            builder.setTitle(getStringResource("request_location_permission_title"));
+            builder.setMessage(getStringResource("request_location_permission_message"));
             builder.setPositiveButton(android.R.string.ok, null);
             builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @SuppressLint("NewApi")
@@ -330,6 +330,12 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
         } catch (final InvocationTargetException e) {
             Log.w(TAG, "InvocationTargetException while checking for ACCESS_COARSE_LOCATION:", e);
         }
+    }
+
+    private String getStringResource(String name) {
+        final Activity activity = cordova.getActivity();
+        int resId = activity.getResources().getIdentifier(name, "string", activity.getPackageName());
+        return activity.getString(resId);
     }
 
     private Method getCheckSelfPermissionMethod() {

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_location_permission_title">This app needs location access</string>
+    <string name="request_location_permission_message">Please grant location access so this app can detect beacons.</string>
+</resources>
